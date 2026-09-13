@@ -1,3 +1,5 @@
+mod core;
+
 fn main() {
-    println!("Hello! ectdrs");
+    println!("Hello! etcdrs");
 }
