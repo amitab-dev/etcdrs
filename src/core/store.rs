@@ -5,11 +5,13 @@ use std::{
 
 const DEFAULT_KEY_EXPIRATION_IN_MS: u64 = 900000;
 
+#[derive(Debug, Clone)]
 pub struct Unit {
     pub value: String,
     pub expiration: Instant,
 }
 
+#[derive(Debug, Clone)]
 pub struct Store {
     pub entities: HashMap<String, Unit>,
 }
@@ -36,7 +38,7 @@ impl Store {
         self.entities.insert(
             key,
             Unit {
-                value: value,
+                value,
                 expiration: ttl,
             },
         );
